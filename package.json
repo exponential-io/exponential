@@ -1,0 +1,45 @@
+{
+  "name": "exponential",
+  "version": "0.0.0",
+  "description": "Exponential command line utility",
+  "main": "exponential.js",
+  "bin": {
+    "exponential": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "homepage": "http://www.exponential.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/exponential-io/exponential.git"
+  },
+  "keywords": [
+    "exponential",
+    "generator",
+    "angular",
+    "angularjs",
+    "angular.js",
+    "mongo",
+    "mongodb",
+    "express",
+    "tools",
+    "tooling"
+  ],
+  "author": "Akbar S. Ahmed <akbar@exponential.io> (http://www.exponential.io/)",
+  "license": "Proprietary",
+  "bugs": {
+    "url": "https://github.com/exponential-io/exponential/issues"
+  },
+  "dependencies": {
+    "optimist": "~0.6.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.1.2",
+    "grunt-cli": ">=0.1.7",
+    "bower": ">=0.9.0"
+  }
+}
