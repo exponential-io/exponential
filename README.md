@@ -1,4 +1,5 @@
-# exponential
+# Exponential
+## Build better apps faster with less effort
 
 Exponential command line utility.
 

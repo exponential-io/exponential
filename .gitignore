@@ -1,15 +1,52 @@
+# Mac
+DS_Store
+
+# Nodemon
+.nodemonignore
+
+# Mocha
 lib-cov
+
+# Package management
+bower_components
+node_modules
+npm-debug.log
+
+# Files copied from bower packages
+public/css/lib
+public/fonts/lib
+public/js/lib
+
+# Client: Bower packages
+client/bower_components
+
+# Build
+build
+
+# Temp files / working directories
+*.swp
+.sass-cache/
+temp/
+
+# Data files
 *.seed
 *.log
 *.csv
 *.dat
-*.out
-*.pid
-*.gz
 
+# Compressed files
+*.tar
+*.tgz
+*.gz
+*.zip
+*.bz
+
+# Process and log files/directories
 pids
 logs
+*.out
+*.pid
 results
 
-npm-debug.log
-node_modules
+# IDE files
+.idea

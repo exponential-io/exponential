@@ -20,13 +20,25 @@ var usageStatement =
         'LAYERS',
         '    --model, --view, --controller, --router, --service',
         '',
-        'Layer is dependent on application type. For example, if application type is',
-        '-angular, then -controller will create an Angular controller.'
+        'Layer is dependent on application type. For example, if application',
+        'type is --angular, then --controller will create an Angular',
+        'controller.'
     ].join('\n');
 
 var argv = require('optimist')
     .usage(usageStatement)
-    .boolean(['project', 'api', 'express', 'angular', 'mongoose', 'model', 'view', 'controller', 'router', 'service'])
+    .boolean([
+        'project',
+        'api',
+        'express',
+        'angular',
+        'mongoose',
+        'model',
+        'view',
+        'controller',
+        'router',
+        'service'
+    ])
     .describe('project', 'Create a new Exponential project')
     .describe('api', 'Create an Express API')
     .describe('angular', 'Create an Angular app')
@@ -47,11 +59,13 @@ var exec = require('child_process').exec;
  * Create a new Exponential project by calling `yo`. 
  * exponential --project --mdf 'project'
  */
+var yoArgs = ' --force --skip-install --insight=false';
+
 if (argv.project) {
     // Generate project skeleton
-    var yoArgs = ' --force --skip-install --insight=false';
     var yoCmd = 'yo exponential:exponentialApp --mdf \'' + argv.mdf + '\'' + yoArgs;
 
+    // TODO: CONVERT THE CALLBACK INTO A SHARED FUNCTION
     var yo = exec(yoCmd, function (error, stdout, stderr) {
         // `yo` outputs to both stdout and stderr as part of its normal
         // operation. Keep this .log() statement so that the user knows which
@@ -62,4 +76,3 @@ if (argv.project) {
         }
     });
 }
-

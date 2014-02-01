@@ -1,0 +1,60 @@
+# Standardized Line Endings
+# =========================
+
+--------------------------------------------------------------------------------
+
+# Set default behavior, in case users don't have core.autocrlf set. In our case
+# we want to always use the Linux lf so that our files are consistent across
+# platforms.
+
+# Plain text
+# ----------
+* text=lf
+
+# Project files
+# -------------
+README text eol=lf
+LICENSE text eol=lf
+.editorconfig text eol=lf
+.jshintrc text eol=lf
+
+# Documentation related files
+# ---------------------------
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+
+# Web Development
+# ---------------
+*.html text eol=lf
+*.htm text eol=lf
+*.hbs text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.less text eol=lf
+*.sass text eol=lf
+*.json text eol=lf
+*.tmpl text eol=lf
+
+# Database Development
+# --------------------
+*.sql text eol=lf
+
+# Git files
+# ---------
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Binary files that must not be modified
+# --------------------------------------
+*.png binary
+*.jpg binary
+*.gif binary
+
+# Linux only files
+# ----------------
+*.sh eol=lf
+
+# Windows only files
+# ------------------
+*.bat eol=crlf
