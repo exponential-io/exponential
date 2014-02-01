@@ -9,6 +9,12 @@
  * @author Akbar S. Ahmed <akbar@exponential.io>
  */
 
+/*
+    Create a project
+    exponential --project --mdf 'project'
+
+    
+ */
 var usageStatement =
     [
         '',
