@@ -12,8 +12,6 @@
 /*
     Create a project
     exponential --project --mdf 'project'
-
-    
  */
 var usageStatement =
     [
@@ -69,7 +67,7 @@ var yoArgs = ' --force --skip-install --insight=false';
 
 if (argv.project) {
     // Generate project skeleton
-    var yoCmd = 'yo exponential:exponentialApp --mdf \'' + argv.mdf + '\'' + yoArgs;
+    var yoCmd = 'yo exponential:project --mdf \'' + argv.mdf + '\'' + yoArgs;
 
     // TODO: CONVERT THE CALLBACK INTO A SHARED FUNCTION
     var yo = exec(yoCmd, function (error, stdout, stderr) {
