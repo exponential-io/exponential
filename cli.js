@@ -64,56 +64,14 @@ var spawn = require('child_process').spawn;
 
 var yoGenerator = '';
 
-//var yoPrefix = 'yo exponential:',
-//    yoMdf  = ' --mdf \'' + argv.mdf + '\'',
-//var    yoArgs = ' --skip-install --insight=false';
-//    yoCmd  = '',
-//    yo;
-
-//var yoCmd = '';
-//var yo;
-
-//console.log('001');
-
 // -----------------------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------------------
 
-/**
- * Create a new project.
- * exponential --project --mdf 'project'
- */
 if (argv.project) {
-//    console.log('002');
-    // Generate project skeleton
-//    yoCmd = 'yo exponential:project --mdf \'' + argv.mdf + '\'' + yoArgs;
-//    console.log(yoCmd);
-
+    // Create a new project.
+    // exponential --project --mdf 'project'
     yoGenerator = 'project';
-
-//    spawn('yo', [
-//        'exponential:project',
-//        '--mdf',
-//        argv.mdf,
-//        '--skip-install',
-//        '--insight=false'
-//    ], { stdio: 'inherit' });
-
-    // TODO: CONVERT THE CALLBACK INTO A SHARED FUNCTION
-//    yo = exec(yoCmd, function (error, stdout, stderr) {
-//        console.log('004');
-//        // `yo` outputs to both stdout and stderr as part of its normal
-//        // operation. Keep this .log() statement so that the user knows which
-//        // files have been created/updated.
-//        console.log(stdout + '\n' + stderr);
-//        if (error !== null) {
-//            console.log('Error: ' + error);
-//        }
-//    });
-
-//    console.log('003');
-
-//    yoCmd = yoPrefix + 'project ' + yoMdf + yoArgs;
 }
 
 // -----------------------------------------------------------------------------
@@ -144,25 +102,9 @@ if (argv.angular) {
         // Create an Angular app.
         // exponential --angular --app --mdf 'crm/app'
         // yo exponential:angularApp --mdf 'crm/app' --skip-install --insight=false
-//        yoCmd = yoPrefix + 'angularApp ' + yoMdf + yoArgs;
         yoGenerator = 'angularApp';
     }
 }
-
-//console.log(yoCmd);
-//
-//yo = exec(yoCmd, function (error, stdout, stderr) {
-//
-//    console.log('hi akbar i am here.....');
-//
-//    // `yo` outputs to both stdout and stderr as part of its normal
-//    // operation. Keep this .log() statement so that the user knows which
-//    // files have been created/updated.
-//    console.log(stdout + '\n' + stderr);
-//    if (error !== null) {
-//        console.log('Error: ' + error);
-//    }
-//});
 
 /**
  * Create an Angular controller.
@@ -196,8 +138,7 @@ if (argv.angular) {
 // Mongoose
 // -----------------------------------------------------------------------------
 
-console.log('005');
-
+// Run the exponential generator
 spawn('yo', [
     'exponential:' + yoGenerator,
     '--mdf',
