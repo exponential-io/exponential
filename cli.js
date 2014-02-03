@@ -71,6 +71,7 @@ var yoGenerator = '';
 if (argv.project) {
     // Create a new project.
     // exponential --project --mdf 'project'
+    // yo exponential --mdf 'project'
     yoGenerator = 'project';
 }
 
@@ -78,67 +79,89 @@ if (argv.project) {
 // API
 // -----------------------------------------------------------------------------
 
-/**
- * Create a new API.
- * exponential --api --mdf 'admin/blog'
- */
-
+if (argv.api) {
+    // Create an API.
+    // exponential --api --mdf 'crm/companies'
+    // yo exponential:api --mdf 'crm/companies'
+    yoGenerator = 'api';
+}
 
 // -----------------------------------------------------------------------------
 // Angular
 // -----------------------------------------------------------------------------
 
-
 if (argv.angular) {
     if (argv.controller) {
-
+        // Create an Angular controller.
+        // exponential --angular --controller --mdf 'crm/companies'
+        // yo exponential:angularController --mdf 'crm/companies'
+        yoGenerator = 'angularController';
     } else if (argv.router) {
-
+        // Create an Angular router.
+        // exponential --angular --router --mdf 'crm/companies'
+        // yo exponential:angularRouter --mdf 'crm/companies'
+        yoGenerator = 'angularRouter';
     } else if (argv.service) {
-
+        // Create an Angular service.
+        // exponential --angular --service --mdf 'crm/companies'
+        // yo exponential:angularService --mdf 'crm/companies'
+        yoGenerator = 'angularService';
     } else if (argv.view) {
-
+        // Create an Angular view.
+        // exponential --angular --view --mdf 'crm/companies'
+        // yo exponential:angularView --mdf 'crm/companies'
+        yoGenerator = 'angularView';
     } else {
         // Create an Angular app.
         // exponential --angular --app --mdf 'crm/app'
-        // yo exponential:angularApp --mdf 'crm/app' --skip-install --insight=false
+        // yo exponential:angularApp --mdf 'crm/app'
         yoGenerator = 'angularApp';
     }
 }
-
-/**
- * Create an Angular controller.
- * exponential --angular --controller --mdf 'crm/companies'
- */
-
-
-/**
- * Create an Angular router.
- * exponential --angular --router --mdf 'crm/companies'
- */
-
-
-/**
- * Create an Angular service.
- * exponential --angular --service --mdf 'crm/companies'
- */
-
-
-/**
- * Create an Angular view.
- * exponential --angular --view --mdf 'crm/companies'
- */
-
 
 // -----------------------------------------------------------------------------
 // Express
 // -----------------------------------------------------------------------------
 
+if (argv.express) {
+    if (argv.controller) {
+        // Create an Express controller.
+        // exponential --express --controller --mdf 'crm/companies'
+        // yo exponential:expressController --mdf 'crm/companies'
+        yoGenerator = 'expressController';
+    } else if (argv.router) {
+        // Create an Express router.
+        // exponential --express --router --mdf 'crm/companies'
+        // yo exponential:expressRouter --mdf 'crm/companies'
+        yoGenerator = 'expressRouter';
+    } else if (argv.view) {
+        // Create an Express view.
+        // exponential --express --view --mdf 'crm/companies'
+        // yo exponential:expressView --mdf 'crm/companies'
+        yoGenerator = 'expressView';
+    } else {
+        // Create an Express app.
+        // exponential --express --app --mdf 'crm/app'
+        // yo exponential:expressApp --mdf 'crm/app'
+        yoGenerator = 'expressApp';
+    }
+}
+
 // -----------------------------------------------------------------------------
 // Mongoose
 // -----------------------------------------------------------------------------
 
+if (argv.mongoose) {
+    // Create a Mongoose model
+    // exponential --mongoose --mdf 'website/contact'
+    // yo exponential:mongooseModel --mdf 'website/contact';
+    yoGenerator = 'mongooseModel';
+}
+
+// -----------------------------------------------------------------------------
 // Run the exponential generator
+// -----------------------------------------------------------------------------
+
 spawn('yo', [
     'exponential:' + yoGenerator,
     '--mdf',
