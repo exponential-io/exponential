@@ -136,8 +136,8 @@ if (argv.express) {
         yoGenerator = 'expressRouter';
     } else if (argv.view) {
         // Create an Express view.
-        // exponential --express --view --mdf 'crm/companies'
-        // yo exponential:expressView --mdf 'crm/companies'
+        // exponential --express --view --mdf 'website/contact'
+        // yo exponential:expressView --mdf 'website/contact'
         yoGenerator = 'expressView';
     }
 // I removed Express app b/c it basically copies a small amount of project skel
