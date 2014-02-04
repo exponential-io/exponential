@@ -158,7 +158,7 @@ if (argv.express) {
 if (argv.mongoose) {
     // Create a Mongoose model
     // exponential --mongoose --mdf 'website/contact'
-    // yo exponential:mongooseModel --mdf 'website/contact';
+    // yo exponential:mongooseModel --mdf 'website/contact'
     yoGenerator = 'mongooseModel';
 }
 
