@@ -131,8 +131,8 @@ if (argv.express) {
         yoGenerator = 'expressController';
     } else if (argv.router) {
         // Create an Express router.
-        // exponential --express --router --mdf 'crm/companies'
-        // yo exponential:expressRouter --mdf 'crm/companies'
+        // exponential --express --router --mdf 'website/contact'
+        // yo exponential:expressRouter --mdf 'website/contact'
         yoGenerator = 'expressRouter';
     } else if (argv.view) {
         // Create an Express view.
