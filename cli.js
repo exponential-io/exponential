@@ -126,8 +126,8 @@ if (argv.angular) {
 if (argv.express) {
     if (argv.controller) {
         // Create an Express controller.
-        // exponential --express --controller --mdf 'crm/companies'
-        // yo exponential:expressController --mdf 'crm/companies'
+        // exponential --express --controller --mdf 'website/contact'
+        // yo exponential:expressController --mdf 'website/contact'
         yoGenerator = 'expressController';
     } else if (argv.router) {
         // Create an Express router.
@@ -139,12 +139,16 @@ if (argv.express) {
         // exponential --express --view --mdf 'crm/companies'
         // yo exponential:expressView --mdf 'crm/companies'
         yoGenerator = 'expressView';
-    } else {
-        // Create an Express app.
-        // exponential --express --app --mdf 'crm/app'
-        // yo exponential:expressApp --mdf 'crm/app'
-        yoGenerator = 'expressApp';
     }
+// I removed Express app b/c it basically copies a small amount of project skel
+// boilerplate. It seems to me, that this generator adds little value over
+// just copy/pasting a few files.
+//    else {
+//        // Create an Express app.
+//        // exponential --express --app --mdf 'crm/app'
+//        // yo exponential:expressApp --mdf 'crm/app'
+//        yoGenerator = 'expressApp';
+//    }
 }
 
 // -----------------------------------------------------------------------------
