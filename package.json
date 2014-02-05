@@ -1,22 +1,7 @@
 {
   "name": "exponential",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Exponential command line utility",
-  "main": "exponential.js",
-  "bin": {
-    "exponential": "cli.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "files": [
-    "cli.js"
-  ],
-  "homepage": "http://www.exponential.io",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/exponential-io/exponential.git"
-  },
   "keywords": [
     "exponential",
     "generator",
@@ -29,10 +14,19 @@
     "tools",
     "tooling"
   ],
-  "author": "Akbar S. Ahmed <akbar@exponential.io> (http://www.exponential.io/)",
-  "license": "Proprietary",
+  "homepage": "http://www.exponential.io",
   "bugs": {
     "url": "https://github.com/exponential-io/exponential/issues"
+  },
+  "author": {
+    "name": "Akbar Ahmed",
+    "email": "akbar@exponential.io",
+    "url": "http://www.exponential.io"
+  },
+  "main": "exponential.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/exponential-io/exponential.git"
   },
   "dependencies": {
     "optimist": "~0.6.0"
@@ -42,5 +36,24 @@
     "grunt-cli": ">=0.1.7",
     "bower": ">=0.9.0"
   },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "bin": {
+    "exponential": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "licenses": [
+    {
+      "type": "proprietary",
+      "url": "http://www.exponential.io/license"
+    }
+  ],
   "preferGlobal": true
 }
