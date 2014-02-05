@@ -36,6 +36,11 @@ npm install exponential -g
 ## Create an account on Exponential.io
 
 - Open a web browser and navigate to http://www.exponential.io.
+- Click **Signup**.
+- Enter the requested information. Please use your email address for both
+  **Email** and **Username**.
+- Click **Signup**.
+
 
 ## Create an Exponential config file
 
