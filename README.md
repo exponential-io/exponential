@@ -11,12 +11,16 @@ Exponential command line utility.
 
 You need the following software installed to use exponential:
 
-- Node.js with NPM
-- MongoDB
+## Install prerequisites on Linux
 
+The following are guides to help you setup a development environment on Linux.
+
+- [Install Node.js](http://exponential.io/blog/install-nodejs-on-linux)
+- [Install MongoDB](http://exponential.io/blog/install-mongodb-on-linux)
 
 # Installation
 
+Install `exponential` after installing the prerequisites listed above.
 `exponential` needs to be installed globally.
 
 ```bash
