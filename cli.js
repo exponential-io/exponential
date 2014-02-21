@@ -18,11 +18,11 @@ var usageStatement =
         '',
         'Usage: $0 [TYPE] [LAYER] --mdf \'path\'',
         '',
-        'TYPES',
+        'TYPE',
         '    --project, --api, --angular, --express, --mongoose',
         '',
-        'LAYERS',
-        '    --app, --model, --view, --controller, --router, --service',
+        'LAYER',
+        '    --app, --model, --view, --controller, --router, --navbar, --service',
         '',
         'Layer is dependent on application type. For example, if application',
         'type is --angular, then --controller will create an Angular',
@@ -42,6 +42,7 @@ var argv = require('optimist')
         'view',
         'controller',
         'router',
+        'navbar',
         'service'
     ])
     .describe('project', 'Create a new Exponential project')
@@ -52,7 +53,8 @@ var argv = require('optimist')
     .describe('model', 'Create a model')
     .describe('view', 'Create a view')
     .describe('controller', 'Create a controller')
-    .describe('router', 'Create a router')
+    .describe('router', 'Create a router and inject routes')
+    .describe('navbar', 'Inject a URL into the navbar')
     .describe('service', 'Create a service')
     .describe('mdf', 'Module Definition Format (MDF) file')
     .string('mdf')
@@ -139,6 +141,11 @@ if (argv.express) {
         // exponential --express --view --mdf 'website/contact'
         // yo exponential:expressView --mdf 'website/contact'
         yoGenerator = 'expressView';
+    } else if (argv.navbar) {
+        // Inject a URL into an Express navbar.
+        // exponential --express --navbar --mdf 'website/contact'
+        // yo exponential:expressNavbar --mdf 'website/contact'
+        yoGenerator = 'expressNavbar';
     }
 // I removed Express app b/c it basically copies a small amount of project skel
 // boilerplate. It seems to me, that this generator adds little value over
