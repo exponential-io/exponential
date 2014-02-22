@@ -46,9 +46,9 @@ var argv = require('optimist')
         'service'
     ])
     .describe('project', 'Create a new Exponential project')
-    .describe('api', 'Create an Express API')
-    .describe('angular', 'Create an Angular app')
-    .describe('express', 'Create an Express component')
+    .describe('api', 'Create an Express API module')
+    .describe('angular', 'Create an Angular app or module')
+    .describe('express', 'Create an Express module')
     .describe('app', 'Create an app skeleton of type TYPE')
     .describe('model', 'Create a model')
     .describe('view', 'Create a view')
@@ -82,10 +82,21 @@ if (argv.project) {
 // -----------------------------------------------------------------------------
 
 if (argv.api) {
-    // Create an API.
-    // exponential --api --mdf 'crm/companies'
-    // yo exponential:api --mdf 'crm/companies'
-    yoGenerator = 'api';
+    if (argv.controller) {
+        // Create an Express controller.
+        // exponential --api --controller --mdf 'website/contact'
+        // yo exponential:apiController --mdf 'website/contact'
+        yoGenerator = 'apiController';
+    } else if (argv.router) {
+        // Create an Express router.
+        // exponential --api --router --mdf 'website/contact'
+        // yo exponential:apiRouter --mdf 'website/contact'
+        yoGenerator = 'apiRouter';
+    }
+//    // Create an API.
+//    // exponential --api --mdf 'crm/companies'
+//    // yo exponential:api --mdf 'crm/companies'
+//    yoGenerator = 'api';
 }
 
 // -----------------------------------------------------------------------------
