@@ -93,10 +93,6 @@ if (argv.api) {
         // yo exponential:apiRouter --mdf 'website/contact'
         yoGenerator = 'apiRouter';
     }
-//    // Create an API.
-//    // exponential --api --mdf 'crm/companies'
-//    // yo exponential:api --mdf 'crm/companies'
-//    yoGenerator = 'api';
 }
 
 // -----------------------------------------------------------------------------
