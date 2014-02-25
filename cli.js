@@ -36,6 +36,7 @@ var argv = require('optimist')
         'api',
         'express',
         'angular',
+        'angularN',
         'mongoose',
         'app',
         'model',
@@ -48,6 +49,7 @@ var argv = require('optimist')
     .describe('project', 'Create a new Exponential project')
     .describe('api', 'Create an Express API module')
     .describe('angular', 'Create an Angular app or module')
+    .describe('angularN', 'Create an Angular app or module')
     .describe('express', 'Create an Express module')
     .describe('app', 'Create an app skeleton of type TYPE')
     .describe('model', 'Create a model')
@@ -98,6 +100,40 @@ if (argv.api) {
 // -----------------------------------------------------------------------------
 // Angular
 // -----------------------------------------------------------------------------
+
+if (argv.angularN) {
+    if (argv.controller) {
+        // Create an Angular controller.
+        // exponential --angular --controller --mdf 'crm/companies'
+        // yo exponential:angularController --mdf 'crm/companies'
+        yoGenerator = 'angularControllerN';
+    } else if (argv.router) {
+        // Create an Angular router.
+        // exponential --angular --router --mdf 'crm/companies'
+        // yo exponential:angularRouter --mdf 'crm/companies'
+        yoGenerator = 'angularRouterN';
+    } else if (argv.service) {
+        // Create an Angular service.
+        // exponential --angular --service --mdf 'crm/companies'
+        // yo exponential:angularService --mdf 'crm/companies'
+        yoGenerator = 'angularServiceN';
+    } else if (argv.navbar) {
+        // Inject URL to module's Read All page into the navbar.
+        // exponential --angular --navbar --mdf 'crm/companies'
+        // yo exponential:angularNavbar --mdf 'crm/companies'
+        yoGenerator = 'angularNavbarN';
+    } else if (argv.view) {
+        // Create an Angular view.
+        // exponential --angular --view --mdf 'crm/companies'
+        // yo exponential:angularView --mdf 'crm/companies'
+        yoGenerator = 'angularViewN';
+    } else {
+        // Create an Angular app.
+        // exponential --angular --app --mdf 'crm/app'
+        // yo exponential:angularApp --mdf 'crm/app'
+        yoGenerator = 'angularApp';
+    }
+}
 
 if (argv.angular) {
     if (argv.controller) {
