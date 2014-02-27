@@ -1,22 +1,28 @@
 #!/usr/bin/env node
-'use strict';
-
 /**
  * `exponential` command.
  * Execution env: Client (CLI)
  *
+ * Use of Exponential.io requires a license.
+ *
  * @copyright Copyright 2014 Exponential.io. All rights reserved.
  * @author Akbar S. Ahmed <akbar@exponential.io>
  */
+'use strict';
 
-/*
-    Create a project
-    exponential --project --mdf 'project'
- */
 var usageStatement =
     [
         '',
-        'Usage: $0 [TYPE] [LAYER] --mdf \'path\'',
+        'Usage: exponential [TYPE] [LAYER] --mdf \'path\'',
+        '',
+        'Create an MDF file',
+        'Usage: exponential --create-mdf',
+        '',
+        'Initialize a project directory',
+        'Usage: exponential --init',
+        '',
+        'Create or update your config file',
+        'Usage: exponential --config',
         '',
         'TYPE',
         '    --project, --api, --angular, --express, --mongoose',
@@ -44,8 +50,14 @@ var argv = require('optimist')
         'controller',
         'router',
         'navbar',
-        'service'
+        'service',
+        'init',
+        'config',
+        'create-mdf'
     ])
+    .describe('create-mdf', 'Create an MDF file')
+    .describe('init', 'Initialize a project directory')
+    .describe('config', 'Create or update your config file')
     .describe('project', 'Create a new Exponential project')
     .describe('api', 'Create an Express API module')
     .describe('angular', 'Create an Angular app or module')
@@ -60,6 +72,7 @@ var argv = require('optimist')
     .describe('service', 'Create a service')
     .describe('mdf', 'Module Definition Format (MDF) file')
     .string('mdf')
+    .default('mdf', '.')
     .demand(['mdf'])
     .argv;
 
@@ -67,6 +80,54 @@ var argv = require('optimist')
 var spawn = require('child_process').spawn;
 
 var yoGenerator = '';
+
+/**
+ * Check that --mdf was specified on the command line for all commands except
+ * `--init` and `--config`. This is a bit of a hack on Optimist as Optimist does
+ * not have an option to make an argument conditionally required.
+ *
+ * @param mdf Path to the mdf file specified on the command line.
+ */
+function checkMdf(mdf) {
+    if (mdf === '.') {
+        require('optimist').usage(usageStatement).showHelp();
+        process.exit(1);
+    }
+}
+
+// Ensure that the user has provided a path to an MDF file. The only exceptions
+// that do not require an MDF file are a.) Initializing a new project directory,
+// b.) Updating the config file, or c.) When creating an MDF file.
+if (!(argv.init) && !(argv.config) && !(argv['create-mdf'])) {
+    checkMdf(argv.mdf);
+}
+
+// -----------------------------------------------------------------------------
+// Administrative Tasks
+// -----------------------------------------------------------------------------
+
+if (argv.init) {
+    // Initialize a new project.
+    // Initialize a project directory by creating the project's outermost
+    // directory and by copying in the example MDF files.
+    // exponential --init
+    // yo exponential:initProject
+    yoGenerator = 'initProject';
+}
+
+if (argv.config) {
+    // Create or update the Exponential.io config file
+    // exponential --config
+    // yo exponential:configFile
+    yoGenerator = 'configFile';
+}
+
+if (argv['create-mdf']) {
+    // Create or update the Exponential.io config file
+    // exponential --create-mdf
+    // yo exponential:createMdf
+    yoGenerator = 'createMdf';
+}
 
 // -----------------------------------------------------------------------------
 // Project
