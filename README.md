@@ -3,31 +3,24 @@
 
 Exponential command line utility.
 
-> Warning: This is a 0.0.0 release. Do not use `exponential` yet as it will not
-> work. `exponential` will be released in beta form on or before February 28,
-> 2014.
-
-# Prerequisites
-
-You need the following software installed to use exponential:
-
-## Install prerequisites on Linux
-
-The following are guides to help you setup a development environment on Linux.
-
-- [Install Node.js](http://exponential.io/blog/install-nodejs-on-linux)
-- [Install MongoDB](http://exponential.io/blog/install-mongodb-on-linux)
-- Install `build-essential` and `g++` so that you can use the optimized/native
-  Mongo drivers
-
-```bash
-sudo apt-get install build-essential g++
-```
+> Exponential.io is currently in alpha. As such, Exponential is undergoing
+> rapid development.
 
 # Installation
 
-Install `exponential` after installing the prerequisites listed above.
-`exponential` needs to be installed globally.
+Installation for Mac, Windows and Linux can be found at the following URLs:
+
+- Mac: [http://www.exponential.io/docs/install/mac](http://www.exponential.io/docs/install/mac)
+- Windows: [http://www.exponential.io/docs/install/windows](http://www.exponential.io/docs/install/windows)
+- Linux: [http://www.exponential.io/docs/install/linux](http://www.exponential.io/docs/install/linux)
+
+
+## Quick Install
+
+If you already have MongoDB and NodeJS installed, then you can install
+Exponential quickly via npm:
+
+> `exponential` must be installed globally.
 
 ```bash
 npm install exponential -g
@@ -35,25 +28,15 @@ npm install exponential -g
 
 ## Create an account on Exponential.io
 
-- Open a web browser and navigate to http://www.exponential.io.
+You need an account on Exponential.io to create Angular apps and/or Express apps
+with Exponential.
+
+- Open a web browser and navigate to [http://www.exponential.io](http://www.exponential.io).
 - Click **Signup**.
 - Enter the requested information. Please use your email address for both
   **Email** and **Username**.
 - Click **Signup**.
 
-
-## Create an Exponential config file
-
-```bash
-vi ~/.exponential/config.json
-```
-
-Paste the following into your `config.json` file and update `email` with your
-Exponential.io email and `password` with your Exponential.io password.
-
-```json
-{
-    "email": "YOUR-EMAIL-ADDRESS",
-    "password": "YOUR-PASSWORD"
-}
-```
+> Note: Email and Username are two fields, but are really the same value. This
+> is a legacy issue that will be updated soon such that only Email will be
+> requested / required.
